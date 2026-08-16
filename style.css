@@ -2060,7 +2060,7 @@ a {
             rgba(48,37,34,.55),
             rgba(48,37,34,.55)
         ),
-        url("/s1.jpg")
+        url("s1.jpg")
         center/cover;
 
     color:
@@ -2202,7 +2202,7 @@ a {
 .elegant-bg {
 
     background:
-        url("/m1.jpg")
+        url("m1.jpg")
         center/cover fixed;
 
 }
@@ -2211,7 +2211,7 @@ a {
 .ethnic-bg {
 
     background:
-        url("/e1.jpg")
+        url("e1.jpg")
         center/cover fixed;
 
 }
@@ -2220,7 +2220,7 @@ a {
 .saree-bg {
 
     background:
-        url("/s1.jpg")
+        url("s1.jpg")
         center/cover fixed;
 
 }
@@ -2573,7 +2573,7 @@ a {
             rgba(255,250,246,.91),
             rgba(255,250,246,.91)
         ),
-        url("/imagesS.jpg")
+        url("imagesS.jpg")
         center/cover;
 
 }
