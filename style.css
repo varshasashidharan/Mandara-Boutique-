@@ -1877,7 +1877,7 @@ a {
             rgba(255,250,246,.90),
             rgba(255,250,246,.90)
         ),
-        url("/imagesS.jpg")
+        url("imagesS.jpg")
         center/cover;
 
 }
