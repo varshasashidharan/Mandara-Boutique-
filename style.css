@@ -1,0 +1,3441 @@
+/* =========================================================
+   MANDARA BOUTIQUE
+   COMPLETE WEBSITE STYLES
+========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --dark: #302522;
+
+    --dark-soft: #453732;
+
+    --brown: #80665b;
+
+    --accent: #a98270;
+
+    --cream: #f7f0ea;
+
+    --ivory: #fffaf6;
+
+    --white: #ffffff;
+
+    --line: #e5d9d0;
+
+    --muted: #76655d;
+
+    --shadow:
+        0 20px 50px rgba(48, 37, 34, .09);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    font-family:
+        "Montserrat",
+        Arial,
+        sans-serif;
+
+    background:
+        var(--ivory);
+
+    color:
+        var(--dark);
+
+    overflow-x: hidden;
+
+}
+
+
+img {
+
+    max-width: 100%;
+
+}
+
+
+a {
+
+    color: inherit;
+
+}
+
+
+::selection {
+
+    background:
+        var(--brown);
+
+    color:
+        white;
+
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+
+    height: 82px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        10px 5%;
+
+    background:
+        rgba(255, 250, 246, .96);
+
+    backdrop-filter:
+        blur(16px);
+
+    border-bottom:
+        1px solid rgba(128, 102, 91, .12);
+
+    position:
+        sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    text-decoration: none;
+
+}
+
+
+.brand img {
+
+    width: 55px;
+
+    height: 55px;
+
+    object-fit: contain;
+
+}
+
+
+.brand span {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 23px;
+
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+
+}
+
+
+.navbar nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+
+}
+
+
+.navbar nav a {
+
+    position: relative;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    letter-spacing: 1.7px;
+
+    text-transform: uppercase;
+
+    padding: 10px 0;
+
+    transition:
+        color .3s ease;
+
+}
+
+
+.navbar nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 2px;
+
+    width: 0;
+
+    height: 1px;
+
+    background:
+        var(--accent);
+
+    transition:
+        width .3s ease;
+
+}
+
+
+.navbar nav a:hover {
+
+    color:
+        var(--accent);
+
+}
+
+
+.navbar nav a:hover::after {
+
+    width: 100%;
+
+}
+
+
+.menu-toggle {
+
+    display: none;
+
+    border: none;
+
+    background: none;
+
+    font-size: 26px;
+
+    color: var(--dark);
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    height:
+        calc(100vh - 82px);
+
+    min-height:
+        650px;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+}
+
+
+.hero-image {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+}
+
+
+.hero-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    object-position:
+        center;
+
+    animation:
+        heroZoom 12s ease-out forwards;
+
+}
+
+
+@keyframes heroZoom {
+
+    from {
+        transform: scale(1.05);
+    }
+
+    to {
+        transform: scale(1);
+    }
+
+}
+
+
+.hero-overlay {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(35, 24, 20, .78),
+            rgba(35, 24, 20, .40),
+            rgba(35, 24, 20, .08)
+        );
+
+}
+
+
+.hero-content {
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    left:
+        7%;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        white;
+
+    max-width:
+        650px;
+
+}
+
+
+.hero-small {
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        5px;
+
+    margin-bottom:
+        22px;
+
+}
+
+
+.hero-content h1 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(65px, 8vw, 110px);
+
+    line-height:
+        .83;
+
+    font-weight:
+        500;
+
+}
+
+
+.hero-content h1 em {
+
+    font-weight:
+        400;
+
+}
+
+
+.hero-description {
+
+    max-width:
+        500px;
+
+    margin:
+        30px 0;
+
+    line-height:
+        1.9;
+
+    font-size:
+        14px;
+
+    color:
+        rgba(255,255,255,.88);
+
+}
+
+
+.hero-actions {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        12px;
+
+}
+
+
+.hero-btn {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        15px;
+
+    min-height:
+        50px;
+
+    padding:
+        0 24px;
+
+    background:
+        white;
+
+    color:
+        var(--dark);
+
+    text-decoration:
+        none;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        1.7px;
+
+    transition:
+        .3s ease;
+
+}
+
+
+.hero-btn:hover {
+
+    background:
+        var(--accent);
+
+    color:
+        white;
+
+}
+
+
+.hero-btn-outline {
+
+    background:
+        transparent;
+
+    color:
+        white;
+
+    border:
+        1px solid rgba(255,255,255,.75);
+
+}
+
+
+.hero-btn-outline:hover {
+
+    background:
+        white;
+
+    color:
+        var(--dark);
+
+}
+
+
+.hero-bottom {
+
+    position:
+        absolute;
+
+    bottom:
+        28px;
+
+    left:
+        7%;
+
+    right:
+        7%;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    color:
+        white;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+/* =========================================================
+   DELIVERY STRIP
+========================================================= */
+
+.delivery-strip {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        50px;
+
+    padding:
+        17px 20px;
+
+    background:
+        var(--dark);
+
+    color:
+        white;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        2px;
+
+    text-align:
+        center;
+
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+.section {
+
+    padding:
+        110px 7%;
+
+}
+
+
+.eyebrow {
+
+    color:
+        var(--accent);
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        3px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.section-copy {
+
+    max-width:
+        650px;
+
+    margin:
+        25px auto 0;
+
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.9;
+
+}
+
+
+.intro {
+
+    text-align:
+        center;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #ffffff,
+            var(--ivory)
+        );
+
+}
+
+
+.intro h2 {
+
+    margin-top:
+        15px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(45px, 6vw, 70px);
+
+    line-height:
+        .95;
+
+    font-weight:
+        500;
+
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.section-title {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        50px;
+
+}
+
+
+.section-title span {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-style:
+        italic;
+
+    font-size:
+        20px;
+
+    color:
+        var(--accent);
+
+}
+
+
+.section-title h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(42px, 5vw, 62px);
+
+    line-height:
+        1;
+
+    font-weight:
+        500;
+
+    margin:
+        10px 0;
+
+}
+
+
+.section-title p {
+
+    color:
+        var(--muted);
+
+    font-size:
+        13px;
+
+}
+
+
+/* =========================================================
+   COLLECTIONS
+========================================================= */
+
+.collections {
+
+    padding:
+        110px 6%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f6ede7,
+            #fffaf7
+        );
+
+}
+
+
+.collection-grid {
+
+    max-width:
+        1250px;
+
+    margin:
+        auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        20px;
+
+}
+
+
+.collection-card {
+
+    height:
+        550px;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    display:
+        block;
+
+    text-decoration:
+        none;
+
+    background:
+        #ddd;
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+.collection-card::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(25,17,14,.82),
+            rgba(25,17,14,.05) 65%
+        );
+
+    transition:
+        .5s ease;
+
+}
+
+
+.collection-card:hover::after {
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(25,17,14,.92),
+            rgba(25,17,14,.10) 70%
+        );
+
+}
+
+
+.collection-card img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    transition:
+        transform .8s cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+.collection-card:hover img {
+
+    transform:
+        scale(1.07);
+
+}
+
+
+.collection-overlay {
+
+    position:
+        absolute;
+
+    z-index:
+        2;
+
+    left:
+        30px;
+
+    right:
+        30px;
+
+    bottom:
+        35px;
+
+    color:
+        white;
+
+}
+
+
+.collection-overlay span {
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.collection-overlay h3 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        38px;
+
+    font-weight:
+        500;
+
+    margin:
+        8px 0;
+
+}
+
+
+.collection-overlay p {
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        2px;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.collection-overlay strong {
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        2px;
+
+    font-weight:
+        500;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.7);
+
+    padding-bottom:
+        5px;
+
+}
+
+
+.center-link {
+
+    text-align:
+        center;
+
+    margin-top:
+        45px;
+
+}
+
+
+.center-link a {
+
+    text-decoration:
+        none;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        2px;
+
+    border-bottom:
+        1px solid var(--dark);
+
+    padding-bottom:
+        5px;
+
+}
+
+
+/* =========================================================
+   NEW ARRIVALS
+========================================================= */
+
+.new-arrivals {
+
+    padding:
+        110px 6%;
+
+    background:
+        var(--ivory);
+
+}
+
+
+.new-arrivals-grid {
+
+    max-width:
+        1250px;
+
+    margin:
+        auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        20px;
+
+}
+
+
+.arrival-card {
+
+    background:
+        white;
+
+    border:
+        1px solid #eee3db;
+
+    box-shadow:
+        0 12px 35px rgba(48,37,34,.06);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.arrival-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        0 22px 50px rgba(48,37,34,.12);
+
+}
+
+
+.arrival-image {
+
+    height:
+        430px;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+}
+
+
+.arrival-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    transition:
+        transform .6s ease;
+
+}
+
+
+.arrival-card:hover .arrival-image img {
+
+    transform:
+        scale(1.05);
+
+}
+
+
+.new-badge {
+
+    position:
+        absolute;
+
+    top:
+        15px;
+
+    left:
+        15px;
+
+    background:
+        var(--dark);
+
+    color:
+        white;
+
+    padding:
+        7px 10px;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        1.5px;
+
+}
+
+
+.arrival-info {
+
+    padding:
+        22px 16px 25px;
+
+    text-align:
+        center;
+
+}
+
+
+.arrival-info h3 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        19px;
+
+    font-weight:
+        600;
+
+    margin-bottom:
+        8px;
+
+}
+
+
+.price,
+.product-price {
+
+    color:
+        var(--brown);
+
+    font-size:
+        14px;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+/* =========================================================
+   PRODUCT ACTIONS
+========================================================= */
+
+.product-actions {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    flex-wrap:
+        wrap;
+
+}
+
+
+.order-whatsapp,
+.order-instagram {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        38px;
+
+    padding:
+        0 13px;
+
+    text-decoration:
+        none;
+
+    text-transform:
+        uppercase;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        1px;
+
+    transition:
+        .3s ease;
+
+}
+
+
+.order-whatsapp {
+
+    background:
+        var(--dark);
+
+    color:
+        white;
+
+}
+
+
+.order-whatsapp:hover {
+
+    background:
+        var(--accent);
+
+}
+
+
+.order-instagram {
+
+    border:
+        1px solid var(--brown);
+
+    color:
+        var(--dark);
+
+}
+
+
+.order-instagram:hover {
+
+    background:
+        var(--dark);
+
+    color:
+        white;
+
+}
+
+
+/* =========================================================
+   HOW TO ORDER
+========================================================= */
+
+.shopping-info {
+
+    padding:
+        115px 7%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f6ede7,
+            #fffaf7
+        );
+
+}
+
+
+.shopping-heading {
+
+    max-width:
+        700px;
+
+    text-align:
+        center;
+
+    margin:
+        0 auto 60px;
+
+}
+
+
+.shopping-heading h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(45px, 6vw, 70px);
+
+    line-height:
+        .92;
+
+    font-weight:
+        500;
+
+    margin:
+        15px 0 22px;
+
+}
+
+
+.shopping-heading p:last-child {
+
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.8;
+
+}
+
+
+.shopping-steps {
+
+    max-width:
+        1050px;
+
+    margin:
+        0 auto 60px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        22px;
+
+}
+
+
+.shopping-step {
+
+    padding:
+        40px 28px;
+
+    text-align:
+        center;
+
+    background:
+        rgba(255,255,255,.8);
+
+    border:
+        1px solid rgba(128,102,91,.15);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.shopping-step:hover {
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+.shopping-step span {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    border:
+        1px solid var(--accent);
+
+    border-radius:
+        50%;
+
+    font-size:
+        10px;
+
+    color:
+        var(--accent);
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.shopping-step h3 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        25px;
+
+    font-weight:
+        600;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.shopping-step p {
+
+    color:
+        var(--muted);
+
+    font-size:
+        12px;
+
+    line-height:
+        1.8;
+
+}
+
+
+.delivery-banner {
+
+    max-width:
+        900px;
+
+    margin:
+        auto;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        20px;
+
+    padding:
+        28px;
+
+    background:
+        var(--dark);
+
+    color:
+        white;
+
+    text-align:
+        center;
+
+}
+
+
+.delivery-icon {
+
+    width:
+        48px;
+
+    height:
+        48px;
+
+    border:
+        1px solid rgba(255,255,255,.4);
+
+    border-radius:
+        50%;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+}
+
+
+.delivery-banner h3 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        27px;
+
+    font-weight:
+        500;
+
+}
+
+
+.delivery-banner p {
+
+    margin-top:
+        3px;
+
+    color:
+        #dfd3cc;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.story {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        80px;
+
+    align-items:
+        center;
+
+    background:
+        var(--ivory);
+
+}
+
+
+.story-image {
+
+    height:
+        600px;
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        20px 20px 0 #eadbd1;
+
+}
+
+
+.story-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    object-position:
+        center top;
+
+    display:
+        block;
+
+    transition:
+        transform .7s ease;
+
+}
+
+
+.story-image:hover img {
+
+    transform:
+        scale(1.04);
+
+}
+
+
+.story-content {
+
+    max-width:
+        600px;
+
+}
+
+
+.story-content h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(45px, 5vw, 65px);
+
+    line-height:
+        .95;
+
+    font-weight:
+        500;
+
+    margin:
+        15px 0 28px;
+
+}
+
+
+.story-content > p:not(.eyebrow) {
+
+    color:
+        var(--muted);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.9;
+
+    margin-bottom:
+        15px;
+
+}
+
+
+.story-stats {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    margin-top:
+        40px;
+
+    border-top:
+        1px solid var(--line);
+
+    border-bottom:
+        1px solid var(--line);
+
+}
+
+
+.story-stat {
+
+    text-align:
+        center;
+
+    padding:
+        22px 10px;
+
+    border-right:
+        1px solid var(--line);
+
+}
+
+
+.story-stat:last-child {
+
+    border-right:
+        none;
+
+}
+
+
+.story-stat h3 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        27px;
+
+    font-weight:
+        600;
+
+}
+
+
+.story-stat p {
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        1px;
+
+    color:
+        var(--muted);
+
+    margin-top:
+        5px;
+
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features-section {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    padding:
+        45px 6%;
+
+    background:
+        #f7efea;
+
+    border-top:
+        1px solid var(--line);
+
+    border-bottom:
+        1px solid var(--line);
+
+}
+
+
+.feature {
+
+    text-align:
+        center;
+
+    padding:
+        15px 30px;
+
+    border-right:
+        1px solid var(--line);
+
+}
+
+
+.feature:last-child {
+
+    border-right:
+        none;
+
+}
+
+
+.feature-icon {
+
+    font-size:
+        25px;
+
+    margin-bottom:
+        12px;
+
+    color:
+        var(--accent);
+
+}
+
+
+.feature h3 {
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        1.5px;
+
+}
+
+
+.feature p {
+
+    margin-top:
+        8px;
+
+    font-size:
+        11px;
+
+    color:
+        var(--muted);
+
+}
+
+
+/* =========================================================
+   COMMUNITY
+========================================================= */
+
+.instagram {
+
+    background:
+        var(--ivory);
+
+}
+
+
+.community-grid {
+
+    max-width:
+        1150px;
+
+    margin:
+        auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:
+        20px;
+
+}
+
+
+.community-card {
+
+    padding:
+        75px 45px;
+
+    text-align:
+        center;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+}
+
+
+.instagram-card {
+
+    background:
+        linear-gradient(
+            rgba(255,250,246,.90),
+            rgba(255,250,246,.90)
+        ),
+        url("/imagesS.jpg")
+        center/cover;
+
+}
+
+
+.whatsapp-card {
+
+    background:
+        linear-gradient(
+            rgba(246,237,231,.94),
+            rgba(246,237,231,.94)
+        ),
+        url("/s2.jpg")
+        center/cover;
+
+}
+
+
+.community-card h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(35px,4vw,52px);
+
+    font-weight:
+        500;
+
+    margin:
+        15px 0;
+
+}
+
+
+.community-card > p:not(.eyebrow) {
+
+    max-width:
+        480px;
+
+    margin:
+        0 auto 28px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.8;
+
+}
+
+
+.btn {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-height:
+        48px;
+
+    padding:
+        0 23px;
+
+    text-decoration:
+        none;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        1.5px;
+
+    transition:
+        .3s ease;
+
+}
+
+
+.btn-dark {
+
+    background:
+        var(--dark);
+
+    color:
+        white;
+
+}
+
+
+.btn-dark:hover {
+
+    background:
+        var(--accent);
+
+}
+
+
+.btn-outline {
+
+    border:
+        1px solid var(--dark);
+
+    color:
+        var(--dark);
+
+}
+
+
+.btn-outline:hover {
+
+    background:
+        var(--dark);
+
+    color:
+        white;
+
+}
+
+
+.contact-note {
+
+    text-align:
+        center;
+
+    margin-top:
+        40px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        .5px;
+
+}
+
+
+/* =========================================================
+   COLLECTION PAGE HERO
+========================================================= */
+
+.collections-hero {
+
+    min-height:
+        440px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+
+    padding:
+        80px 20px;
+
+    background:
+        linear-gradient(
+            rgba(48,37,34,.55),
+            rgba(48,37,34,.55)
+        ),
+        url("/s1.jpg")
+        center/cover;
+
+    color:
+        white;
+
+}
+
+
+.collections-hero .eyebrow {
+
+    color:
+        #e6c9b9;
+
+}
+
+
+.collections-hero h1 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(55px,8vw,90px);
+
+    line-height:
+        .9;
+
+    font-weight:
+        500;
+
+    margin:
+        15px 0;
+
+}
+
+
+.collections-hero > p:not(.eyebrow) {
+
+    max-width:
+        600px;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.8;
+
+    color:
+        rgba(255,255,255,.85);
+
+}
+
+
+.collection-note {
+
+    display:
+        flex;
+
+    gap:
+        25px;
+
+    margin-top:
+        30px;
+
+    flex-wrap:
+        wrap;
+
+    justify-content:
+        center;
+
+}
+
+
+.collection-note span {
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        1.5px;
+
+}
+
+
+/* =========================================================
+   COLLECTION SECTIONS
+========================================================= */
+
+.product-collection {
+
+    position:
+        relative;
+
+    padding:
+        105px 6%;
+
+    background:
+        var(--cream);
+
+}
+
+
+.product-collection::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    z-index:
+        0;
+
+    background:
+        linear-gradient(
+            rgba(255,250,246,.94),
+            rgba(255,250,246,.94)
+        );
+
+}
+
+
+.product-collection > * {
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+}
+
+
+.elegant-bg {
+
+    background:
+        url("/m1.jpg")
+        center/cover fixed;
+
+}
+
+
+.ethnic-bg {
+
+    background:
+        url("/e1.jpg")
+        center/cover fixed;
+
+}
+
+
+.saree-bg {
+
+    background:
+        url("/s1.jpg")
+        center/cover fixed;
+
+}
+
+
+.collection-heading {
+
+    max-width:
+        1250px;
+
+    margin:
+        0 auto 50px;
+
+    text-align:
+        center;
+
+}
+
+
+.collection-heading > span {
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        3px;
+
+    color:
+        var(--accent);
+
+}
+
+
+.collection-heading h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(45px,6vw,70px);
+
+    font-weight:
+        500;
+
+    line-height:
+        .9;
+
+    margin:
+        12px 0;
+
+}
+
+
+.collection-heading p {
+
+    color:
+        var(--muted);
+
+    font-size:
+        12px;
+
+}
+
+
+/* =========================================================
+   PRODUCT GRID
+========================================================= */
+
+.product-grid {
+
+    max-width:
+        1250px;
+
+    margin:
+        auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:
+        20px;
+
+}
+
+
+.product-card {
+
+    background:
+        white;
+
+    text-align:
+        center;
+
+    padding-bottom:
+        25px;
+
+    box-shadow:
+        0 12px 35px rgba(48,37,34,.07);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.product-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 22px 45px rgba(48,37,34,.13);
+
+}
+
+
+.product-image {
+
+    position:
+        relative;
+
+    height:
+        430px;
+
+    overflow:
+        hidden;
+
+}
+
+
+.product-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    display:
+        block;
+
+    transition:
+        transform .6s ease;
+
+}
+
+
+.product-card:hover .product-image img {
+
+    transform:
+        scale(1.05);
+
+}
+
+
+.product-image > span {
+
+    position:
+        absolute;
+
+    top:
+        14px;
+
+    left:
+        14px;
+
+    background:
+        var(--dark);
+
+    color:
+        white;
+
+    padding:
+        7px 10px;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        1.5px;
+
+}
+
+
+.product-card h3 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        21px;
+
+    font-weight:
+        600;
+
+    margin:
+        19px 8px 8px;
+
+}
+
+
+.product-card .product-price {
+
+    margin-bottom:
+        17px;
+
+}
+
+
+/* =========================================================
+   COLLECTION CTA
+========================================================= */
+
+.collection-cta {
+
+    padding:
+        100px 20px;
+
+    text-align:
+        center;
+
+    background:
+        var(--dark);
+
+    color:
+        white;
+
+}
+
+
+.collection-cta h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(42px,6vw,65px);
+
+    font-weight:
+        500;
+
+    margin:
+        12px 0;
+
+}
+
+
+.collection-cta > p:not(.eyebrow) {
+
+    color:
+        #d8cbc4;
+
+    font-size:
+        13px;
+
+    margin-bottom:
+        28px;
+
+}
+
+
+.cta-buttons {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        10px;
+
+}
+
+
+.collection-cta .btn-dark {
+
+    background:
+        white;
+
+    color:
+        var(--dark);
+
+}
+
+
+.collection-cta .btn-dark:hover {
+
+    background:
+        var(--accent);
+
+    color:
+        white;
+
+}
+
+
+.collection-cta .btn-outline {
+
+    border-color:
+        rgba(255,255,255,.6);
+
+    color:
+        white;
+
+}
+
+
+.collection-cta .btn-outline:hover {
+
+    background:
+        white;
+
+    color:
+        var(--dark);
+
+}
+
+
+/* =========================================================
+   COLLECTION INSTAGRAM
+========================================================= */
+
+.instagram-section {
+
+    padding:
+        105px 20px;
+
+    text-align:
+        center;
+
+    background:
+        linear-gradient(
+            rgba(255,250,246,.91),
+            rgba(255,250,246,.91)
+        ),
+        url("/imagesS.jpg")
+        center/cover;
+
+}
+
+
+.instagram-section h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(45px,6vw,70px);
+
+    font-weight:
+        500;
+
+    margin:
+        12px 0;
+
+}
+
+
+.instagram-section > p:not(.eyebrow) {
+
+    color:
+        var(--muted);
+
+    font-size:
+        13px;
+
+    margin-bottom:
+        28px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap:
+        50px;
+
+    padding:
+        70px 7% 25px;
+
+    background:
+        #29221f;
+
+    color:
+        #eee5df;
+
+}
+
+
+.footer-brand {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        30px;
+
+    font-weight:
+        600;
+
+    text-decoration:
+        none;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.footer p {
+
+    max-width:
+        350px;
+
+    color:
+        #b9aaa0;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.8;
+
+    margin-top:
+        14px;
+
+}
+
+
+.footer-delivery {
+
+    color:
+        #d5b8a7 !important;
+
+}
+
+
+.footer-links {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        11px;
+
+}
+
+
+.footer-links h4 {
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        2px;
+
+    margin-bottom:
+        8px;
+
+}
+
+
+.footer-links a {
+
+    color:
+        #cbbdb6;
+
+    text-decoration:
+        none;
+
+    font-size:
+        10px;
+
+    transition:
+        .3s ease;
+
+}
+
+
+.footer-links a:hover {
+
+    color:
+        white;
+
+}
+
+
+.footer-bottom {
+
+    grid-column:
+        1 / -1;
+
+    border-top:
+        1px solid #514741;
+
+    margin-top:
+        15px;
+
+    padding-top:
+        20px;
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+}
+
+
+.footer-bottom p {
+
+    margin:
+        0;
+
+    font-size:
+        9px;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+
+        height:
+            72px;
+
+    }
+
+
+    .brand img {
+
+        width:
+            45px;
+
+        height:
+            45px;
+
+    }
+
+
+    .brand span {
+
+        font-size:
+            18px;
+
+        letter-spacing:
+            1.5px;
+
+    }
+
+
+    .navbar nav {
+
+        gap:
+            17px;
+
+    }
+
+
+    .collection-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .collection-card {
+
+        height:
+            500px;
+
+    }
+
+
+    .new-arrivals-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .product-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .product-image {
+
+        height:
+            370px;
+
+    }
+
+
+    .story {
+
+        gap:
+            45px;
+
+    }
+
+
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .menu-toggle {
+
+        display:
+            block;
+
+    }
+
+
+    .navbar nav {
+
+        display:
+            none;
+
+        position:
+            absolute;
+
+        top:
+            72px;
+
+        left:
+            0;
+
+        right:
+            0;
+
+        background:
+            var(--ivory);
+
+        padding:
+            15px 6%;
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        gap:
+            0;
+
+        border-bottom:
+            1px solid var(--line);
+
+        box-shadow:
+            0 15px 30px rgba(48,37,34,.08);
+
+    }
+
+
+    .navbar nav.active {
+
+        display:
+            flex;
+
+    }
+
+
+    .navbar nav a {
+
+        width:
+            100%;
+
+        padding:
+            15px 0;
+
+        border-bottom:
+            1px solid #eee4dd;
+
+    }
+
+
+    .hero {
+
+        height:
+            78vh;
+
+        min-height:
+            590px;
+
+    }
+
+
+    .hero-content {
+
+        left:
+            0;
+
+        right:
+            0;
+
+        padding:
+            30px;
+
+        text-align:
+            center;
+
+    }
+
+
+    .hero-content h1 {
+
+        font-size:
+            clamp(58px,16vw,82px);
+
+    }
+
+
+    .hero-description {
+
+        margin:
+            25px auto;
+
+    }
+
+
+    .hero-actions {
+
+        justify-content:
+            center;
+
+    }
+
+
+    .hero-bottom {
+
+        left:
+            30px;
+
+        right:
+            30px;
+
+    }
+
+
+    .hero-bottom span:last-child {
+
+        display:
+            none;
+
+    }
+
+
+    .delivery-strip {
+
+        flex-direction:
+            column;
+
+        gap:
+            7px;
+
+    }
+
+
+    .section {
+
+        padding:
+            80px 5%;
+
+    }
+
+
+    .collections {
+
+        padding:
+            80px 5%;
+
+    }
+
+
+    .new-arrivals {
+
+        padding:
+            80px 5%;
+
+    }
+
+
+    .new-arrivals-grid {
+
+        gap:
+            12px;
+
+    }
+
+
+    .arrival-image {
+
+        height:
+            300px;
+
+    }
+
+
+    .arrival-info h3 {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .product-actions {
+
+        gap:
+            5px;
+
+    }
+
+
+    .order-whatsapp,
+    .order-instagram {
+
+        padding:
+            0 9px;
+
+        font-size:
+            7px;
+
+    }
+
+
+    .shopping-info {
+
+        padding:
+            80px 5%;
+
+    }
+
+
+    .shopping-steps {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .story {
+
+        grid-template-columns:
+            1fr;
+
+        padding:
+            80px 5%;
+
+    }
+
+
+    .story-image {
+
+        height:
+            450px;
+
+        order:
+            2;
+
+    }
+
+
+    .story-content {
+
+        order:
+            1;
+
+    }
+
+
+    .story-stats {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .story-stat {
+
+        border-right:
+            none;
+
+        border-bottom:
+            1px solid var(--line);
+
+    }
+
+
+    .story-stat:last-child {
+
+        border-bottom:
+            none;
+
+    }
+
+
+    .features-section {
+
+        grid-template-columns:
+            1fr;
+
+        padding:
+            30px 5%;
+
+    }
+
+
+    .feature {
+
+        border-right:
+            none;
+
+        border-bottom:
+            1px solid var(--line);
+
+        padding:
+            25px;
+
+    }
+
+
+    .feature:last-child {
+
+        border-bottom:
+            none;
+
+    }
+
+
+    .community-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .community-card {
+
+        padding:
+            60px 25px;
+
+    }
+
+
+    .collections-hero {
+
+        min-height:
+            380px;
+
+    }
+
+
+    .collection-note {
+
+        flex-direction:
+            column;
+
+        gap:
+            8px;
+
+    }
+
+
+    .product-collection {
+
+        padding:
+            75px 5%;
+
+    }
+
+
+    .product-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:
+            12px;
+
+    }
+
+
+    .product-image {
+
+        height:
+            300px;
+
+    }
+
+
+    .product-card h3 {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .collection-cta {
+
+        padding:
+            80px 20px;
+
+    }
+
+
+    .footer {
+
+        grid-template-columns:
+            1fr;
+
+        padding:
+            55px 6% 25px;
+
+        gap:
+            35px;
+
+    }
+
+
+    .footer-bottom {
+
+        flex-direction:
+            column;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .brand span {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .brand img {
+
+        width:
+            40px;
+
+        height:
+            40px;
+
+    }
+
+
+    .hero-content h1 {
+
+        font-size:
+            58px;
+
+    }
+
+
+    .hero-btn {
+
+        width:
+            100%;
+
+    }
+
+
+    .new-arrivals-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .arrival-image {
+
+        height:
+            250px;
+
+    }
+
+
+    .arrival-info {
+
+        padding:
+            16px 7px 20px;
+
+    }
+
+
+    .arrival-info h3 {
+
+        font-size:
+            14px;
+
+    }
+
+
+    .order-whatsapp,
+    .order-instagram {
+
+        width:
+            100%;
+
+    }
+
+
+    .product-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .product-image {
+
+        height:
+            260px;
+
+    }
+
+
+    .product-card h3 {
+
+        font-size:
+            15px;
+
+    }
+
+
+    .product-card {
+
+        padding-bottom:
+            18px;
+
+    }
+
+
+    .product-card .product-price {
+
+        font-size:
+            12px;
+
+    }
+
+
+    .collections-hero h1 {
+
+        font-size:
+            58px;
+
+    }
+
+}
